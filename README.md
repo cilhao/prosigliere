@@ -72,7 +72,7 @@ No external database installation is required; the project uses an embedded H2 i
 ### 1. Clone and enter the project
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:cilhao/prosigliere.git
 cd prosigliere
 ```
 

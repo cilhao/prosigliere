@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: prosigliere
+  datasource:
+    url: jdbc:h2:mem:prosigliere;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+  jackson:
+    default-property-inclusion: non_null
+  data:
+    web:
+      pageable:
+        default-page-size: 5
+        max-page-size: 10
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui
+
+server:
+  port: 8080
+  error:
+    include-message: always
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "info,health"
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: "Prosigliere backend REST API"
+    description: "BlogPost REST API capable of manage blog posts and comments."
+    version: "1.0.0"
+
+logging:
+  level:
+    dev.ercilio.prosigliere: DEBUG
